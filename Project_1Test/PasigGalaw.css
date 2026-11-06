@@ -1,0 +1,303 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8f3;
+    color: #34451c;
+}
+
+/* HEADER */
+
+.header {
+    background: #d9f2d0;
+    padding: 30px 7%;
+    min-height: 110px;
+}
+
+.header h1 {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: bold;
+    color: #263c08;
+    font-size: 30px;
+}
+
+.header p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* MAIN LAYOUT */
+
+.main-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 600px;
+    background: white;
+}
+
+/* REPORT FORM */
+
+.report-section {
+    padding: 25px 35px;
+}
+
+.report-section h2,
+.map-section h2 {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #263c08;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd7c1;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6d9847;
+}
+
+/* IMAGE PREVIEW */
+
+.image-preview {
+    display: none;
+    margin-top: 12px;
+    width: 180px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* BUTTON */
+
+.submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: #557d35;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #3d6225;
+}
+
+/* GOOGLE MAP */
+
+.map-section {
+    padding: 25px;
+    background: #f3f6ef;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+}
+
+.map-note {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #65745b;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 25px 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .report-section {
+        padding: 25px 20px;
+    }
+
+    .map-section {
+        padding: 20px;
+    }
+
+    .map-section iframe {
+        height: 350px;
+    }
+}
+
+#location {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd7c1;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+#map {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    border: 1px solid #cbd7c1;
+    overflow: hidden;
+}
+
+.map-instruction {
+    font-size: 13px;
+    color: #65745b;
+    margin-top: 8px;
+}
+
+.location-search {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.location-search input {
+    min-width: 0;
+    flex: 1;
+}
+
+#searchLocation {
+    padding: 0 16px;
+    border: 0;
+    border-radius: 5px;
+    background: #557d35;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#searchLocation:hover {
+    background: #3d6225;
+}
+
+#searchLocation:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.location-error {
+    margin-top: 7px;
+    color: #b42318;
+    font-size: 13px;
+}
+
+.report-confirmation {
+    margin: 24px 35px;
+    padding: 20px;
+    border: 1px solid #cbd7c1;
+    border-left: 5px solid #557d35;
+    border-radius: 6px;
+    background: #f5f8f3;
+}
+
+.report-confirmation h3 {
+    margin-bottom: 8px;
+    color: #263c08;
+}
+
+.report-confirmation p {
+    margin-bottom: 14px;
+}
+
+.report-confirmation dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 14px;
+}
+
+.report-confirmation dt {
+    font-weight: bold;
+}
+
+.report-confirmation dd {
+    overflow-wrap: anywhere;
+}
+
+.report-photo-preview {
+    display: block;
+    max-width: min(100%, 420px);
+    max-height: 320px;
+    margin: 18px 0;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.review-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.review-actions button,
+#reportConfirmation > button {
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit-report-btn {
+    background: #e6ecdf;
+    color: #34451c;
+}
+
+.confirm-report-btn {
+    background: #557d35;
+    color: #fff;
+}
+
+.review-actions button:hover,
+#reportConfirmation > button:hover {
+    filter: brightness(0.92);
+}
+
+@media (max-width: 768px) {
+    .report-confirmation {
+        margin: 20px;
+    }
+}

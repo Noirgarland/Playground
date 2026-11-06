@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasig Galaw</title>
+    <link rel="stylesheet" href="PasigGalaw.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="">
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to Pasig Galaw</h1>
+        <p>Building a better and safer Pasig together.</p>
+    </header>
+
+    <main class="main-container">
+        <section class="report-section">
+            <h2>Community Issue</h2>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="name">Enter your name:</label>
+                    <input type="text" id="name" placeholder="Your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Where's the Location:</label>
+                    <div class="location-search">
+                        <input type="text" id="location"
+                            placeholder="Search for an address or place..."
+                            autocomplete="off" required>
+                        <button type="button" id="searchLocation">Search</button>
+                    </div>
+                    <div id="map" aria-label="Map for selecting the issue location"></div>
+                    <p class="map-instruction">
+                        Search for a place, or click the map / drag the pin to set the exact location.
+                    </p>
+                    <p id="locationError" class="location-error" role="alert" hidden></p>
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Type of Issue:</label>
+                    <select id="category" required>
+                        <option value="">Select an issue</option>
+                        <option>Garbage Disposal</option>
+                        <option>Road Damage</option>
+                        <option>Flooding</option>
+                        <option>Streetlight Problem</option>
+                        <option>Public Safety</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason / Problem:</label>
+                    <textarea id="reason" placeholder="Describe the problem..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Attach a photo:</label>
+                    <input type="file" id="photo" accept="image/*">
+                    <img id="imagePreview" class="image-preview" alt="Image preview">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact Info:</label>
+                    <input type="text" id="contact" placeholder="Phone number or email" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Preview Report</button>
+            </form>
+            <section id="reportConfirmation" class="report-confirmation" aria-live="polite" hidden></section>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    <script src="PasigGalaw.js"></script>
+</body>
+</html>
